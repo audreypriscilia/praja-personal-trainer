@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Praja Personal Trainer's Clients</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#070d1c;--card:#0f1a33;--line:#233559;--tx:#eceff6;--mut:#8d9dbd;--gold:#cdb07a;--gold2:#a98a52;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Jost','Jost',system-ui,sans-serif;font-weight:400;background-image:radial-gradient(circle at 85% -10%,#1f3160 0,transparent 55%),radial-gradient(circle at 0% 100%,#0f2a47 0,transparent 45%);background-attachment:fixed}
+.w{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;font-weight:600;margin:0;color:var(--gold);letter-spacing:.8px;line-height:1.1}
+.sub{color:var(--mut);font-size:13px;margin:4px 0 18px;font-family:'Jost',system-ui,sans-serif}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px;font-family:'Jost',system-ui,sans-serif}
+button,select,input,textarea{font:inherit;font-family:'Jost',system-ui,sans-serif}
+button{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:8px 13px;cursor:pointer;font-size:13px}
+button:hover{border-color:var(--gold)}
+.gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0b1a33;border:0;font-weight:700}
+select{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:8px}
+.card{background:linear-gradient(160deg,#111e3c,#0b1530);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:16px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{border-bottom:1px solid var(--line);padding:4px}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-align:left;font-family:'Jost',system-ui,sans-serif;white-space:nowrap}
+th input{color:var(--gold);font-weight:600}
+td input,th input{width:100%;min-width:80px;background:transparent;color:var(--tx);border:1px solid transparent;border-radius6px;padding:7px;border-radius:6px}
+td input:focus,th input:focus,textarea:focus{outline:0;border-color:var(--gold);background:#0a1329}
+.x{padding:2px 8px;color:var(--mut);border:0;background:none}
+label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-family:'Jost',system-ui,sans-serif;display:block;margin:6px 0 4px}
+textarea{width:100%;min-height:90px;background:#0a1329;color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:10px}
+.an{border-color:var(--gold);white-space:pre-wrap;line-height:1.6;font-family:'Jost',system-ui,sans-serif;font-size:14px}
+.an h3{color:var(--gold);margin:0 0 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600}
+.st{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+.st div{background:#0a1329;border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:110px}
+.st b{display:block;color:var(--gold);font-size:18px}
+.st span{font-size:11px;color:var(--mut)}
+.hint{font-size:12px;color:var(--mut);font-family:'Jost',system-ui,sans-serif}
+button{letter-spacing:.03em}.gold{letter-spacing:.08em;text-transform:uppercase;font-size:12px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.f .hint{margin-top:6px}
+.fi{width:100%;background:#0a1329;color:var(--tx);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-size:15px;min-height:48px}
+.fi.big{font-size:24px;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-weight:600}
+.ro{display:flex;align-items:center}
+.fi:focus{outline:0;border-color:var(--gold)}
+th.no,td.no{width:36px;min-width:36px;text-align:center;color:var(--mut);font-size:12px}
+th.w-ex,td.w-ex{min-width:210px}
+th.w-n,td.w-n{width:96px;min-width:88px}
+td.w-n input,th.w-n input{min-width:0;text-align:center}
+th.w-nt,td.w-nt{min-width:210px}
+th.w-o,td.w-o{min-width:140px}
+tbody tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+tr:hover td{background:rgba(205,176,122,.06)}
+td input{min-height:44px;font-size:15px}
+.tb{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.card{margin-bottom:18px}
+.sec{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;color:var(--gold);margin:0 0 10px;font-weight:600}
+</style></head><body><div class="w">
+<h1>Praja Personal Trainer's Clients</h1>
+<div class="sub" id="sync">Loading…</div>
+<div class="tb" style="margin-bottom:16px"><button id="v1" class="gold">Clients</button><button id="v2">Monthly Overview</button></div>
+<div id="cc"><div class="card"><div class="grid">
+<div class="f"><label>Select client</label><select id="cl" class="fi"></select></div>
+<div class="f"><label>Client name (editable)</label><input id="cn" class="fi" placeholder="Client name"></div>
+<div class="f" style="display:flex;align-items:flex-end;gap:8px"><button id="nc" class="gold" style="min-height:48px;flex:1">+ Client</button><button id="dc" style="min-height:48px">Delete</button></div>
+</div></div></div>
+<div id="app"></div>
+</div>
+<script>
+const uid=()=>Math.random().toString(36).slice(2,9);
+const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const fmtD=v=>{if(!v)return"";const[y,m,d]=v.split("-").map(Number);return new Date(y,m-1,d).toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"})};
+const defCols=()=>[["Exercise"],["Set"],["Weight (kg)"],["Reps"],["RPE"],["Notes"]].map(a=>({id:uid(),label:a[0]}));
+const newClient=n=>{const c=defCols();return{id:uid(),name:n,cols:c,rows:[{id:uid(),c:{}}],notes:""}};
+let S={sel:null,clients:[]},db=null,sample=null,aiText="",analysis=null,timer;
+try{const l=localStorage.getItem("pl");if(l)S=JSON.parse(l)}catch(e){}
+if(!S.clients.length){const c=newClient("Client 1");S.clients=[c];S.sel=c.id}
+const cur=()=>S.clients.find(c=>c.id===S.sel)||S.clients[0];
+function save(){
+ try{localStorage.setItem("pl",JSON.stringify(S))}catch(e){}
+ clearTimeout(timer);timer=setTimeout(async()=>{
+  if(!db)return;try{await db.doc("app/state").set({json:JSON.stringify(S)});sync("Saved ✓")}catch(e){sync("Saved on this device")}},700)}
+function sync(t){document.getElementById("sync").textContent=t}
+const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+function render(){
+ document.getElementById("v1").className=view==="cl"?"gold":"";document.getElementById("v2").className=view==="ov"?"gold":"";document.getElementById("cc").style.display=view==="ov"?"none":"";
+ if(view==="ov"){drawOv();return}
+ const c=cur(),cl=document.getElementById("cl");document.getElementById("cn").value=c.name;
+ cl.innerHTML=S.clients.map(x=>`<option value="${x.id}" ${x.id===c.id?"selected":""}>${esc(x.name)}</option>`).join("");
+ const cc=k=>/latihan|exercise|gerak|nama/i.test(k.label)?"w-ex":/^set$|beban|load|weight|rep|rpe/i.test(k.label)?"w-n":/catatan|note/i.test(k.label)?"w-nt":"w-o";
+ let h=`<div class="card"><div class="grid">
+<div class="f"><label>Session date</label><input id="dt" type="date" value="${c.date||today()}" class="fi"><div class="hint" id="dtl">${esc(fmtD(c.date||today()))}</div></div>
+<div class="f"><label>Sessions remaining</label><input id="sl" type="number" min="0" value="${c.left??0}" class="fi big"><div class="hint">${c.left===0?"Package finished — time to renew":"Decreases by 1 each time you click ▶ New session"}</div></div>
+<div class="f"><label>Sessions used</label><div class="fi big ro">${(c.hist||[]).length}</div><div class="hint">Total sessions saved in history</div></div>
+</div></div><div class="card"><div class="tw"><table><tr><th class="no">#</th>`;
+ c.cols.forEach(k=>h+=`<th class="${cc(k)}"><div style="display:flex"><input data-k="${k.id}" value="${esc(k.label)}"><button class="x" data-dk="${k.id}" title="Delete column">✕</button></div></th>`);
+ h+=`<th></th></tr>`;
+ const ex=c.cols.find(k=>/latihan|exercise|gerak|nama/i.test(k.label));c.rows.forEach((r,ri)=>{h+=`<tr><td class="no">${ri+1}</td>`;c.cols.forEach(k=>{const pv=r.pv&&r.pv[k.label]?"last: "+r.pv[k.label]:"";h+=`<td class="${cc(k)}"><input data-r="${r.id}" data-c="${k.id}" value="${esc(r.c[k.id])}" placeholder="${esc(pv)}"${ex&&ex.id===k.id?' data-ex="1" autocomplete="off"':''}></td>`});h+=`<td><button class="x" data-dr="${r.id}" title="Delete row">✕</button></td></tr>`});
+ h+=`</table></div><div class="bar" style="margin:10px 0 0"><button id="ar">+ Add row</button><button id="ak">+ Add column</button><span class="hint">Unlimited columns. Click a column title to rename it.</span></div></div>
+ <div class="card"><label>Post-session analysis notes</label><textarea id="nt" placeholder="Client condition, technique, complaints, progress, plan for next session…">${esc(c.notes)}</textarea></div>
+ <div class="tb"><button class="gold" id="an" style="padding:14px 22px">✦ Analyze Client Training</button><button id="ns" style="padding:14px 22px;color:var(--gold);border-color:var(--gold)">▶ New session</button><button id="hs" style="padding:14px 22px">Session history</button></div>
+ <div id="hist"></div><div id="out" style="margin-top:16px"></div>`;
+ document.getElementById("app").innerHTML=h;if(showH)drawH();
+ if(analysis&&analysis.id===c.id)showAn();
+}
+const num=v=>{const n=parseFloat(String(v||"").replace(",","."));return isNaN(n)?null:n};
+function analyze(src){
+ const c=src||cur(),f=re=>c.cols.find(k=>re.test(k.label));
+ const kN=f(/latihan|exercise|gerak|nama/i),kS=f(/^set/i),kB=f(/beban|load|berat|weight|kg/i),kR=f(/rep/i),kP=f(/rpe/i);
+ let vol=0,reps=0,rp=[],fl=[],n=0,top=null,items=[];
+ c.rows.forEach(r=>{
+  const nm=kN?r.c[kN.id]:"",s=kS?num(r.c[kS.id])||1:1,b=kB?num(r.c[kB.id]):null,rr=kR?num(r.c[kR.id]):null,p=kP?num(r.c[kP.id]):null;
+  if(!nm&&b==null&&rr==null)return;n++;items.push({nm:nm||"Latihan",s,b,rr,p,vol:(b!=null&&rr)?s*b*rr:0,reps:rr?s*rr:0});
+  if(rr)reps+=s*rr;if(b!=null&&rr)vol+=s*b*rr;
+  if(b!=null&&(!top||b>top.b))top={nm,b};
+  if(p!=null){rp.push(p);
+   if(p>=9)fl.push(`• ${nm||"Latihan"} (RPE ${p}): sangat berat. Pertahankan beban, jangan naik dulu, pastikan teknik dan pemulihan.`);
+   else if(p<=6)fl.push(`• ${nm||"Latihan"} (RPE ${p}): masih ringan. Pertimbangkan naik beban ±2,5–5% atau tambah repetisi.`);
+   else if(p<=8)fl.push(`• ${nm||"Latihan"} (RPE ${p}): zona kerja ideal. Progresi bertahap sudah tepat.`)}
+ });
+ const avg=rp.length?rp.reduce((a,b)=>a+b,0)/rp.length:null;
+ let lvl=avg==null?"RPE belum diisi, sehingga intensitas belum bisa dinilai.":avg>=8.5?"Intensitas sesi tinggi. Pertimbangkan sesi ringan atau deload berikutnya.":avg>=7?"Intensitas sesi moderat-tinggi, cocok untuk membangun progres.":"Intensitas sesi rendah-moderat, ada ruang untuk menaikkan beban.";
+ const res={id:c.id,n,vol,reps,avg,top,fl,lvl,items};if(!src)analysis=res;return res;
+}
+function showAn(){const a=analysis,o=document.getElementById("out");
+ if(!a.n){o.innerHTML=`<div class="card an">Add at least one exercise first so it can be analyzed.</div>`;return}
+ o.innerHTML=`<div class="card an"><h3>Analisis Sesi</h3><div class="hint" style="margin:-4px 0 8px">${esc(fmtD(cur().date||today()))} · ${esc(cur().name)}</div>${statsHtml(a,"cur")}${sample?`<button id="ai" class="gold" style="margin-top:12px">Deep analysis with Claude</button><div id="aiout" style="margin-top:12px">${esc(aiText)}</div>`:""}</div>`}
+function dlg(msg,inp,def){return new Promise(res=>{
+ const o=document.createElement("div");o.style.cssText="position:fixed;inset:0;background:rgba(5,12,28,.75);display:flex;align-items:center;justify-content:center;z-index:99;padding:16px";
+ o.innerHTML=`<div class="card" style="max-width:420px;width:100%;margin:0"><div style="margin-bottom:12px;line-height:1.5;font-family:'Jost',system-ui,sans-serif">${esc(msg)}</div>${inp?'<input id="dlgi" style="width:100%;background:#0a1329;color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:12px">':""}<div class="bar" style="margin:0;justify-content:flex-end"><button id="dlgn">Cancel</button><button id="dlgy" class="gold">OK</button></div></div>`;
+ document.body.appendChild(o);const i=o.querySelector("#dlgi");if(i){i.value=def||"";i.focus()}
+ const end=v=>{o.remove();res(v)};
+ o.querySelector("#dlgy").onclick=()=>end(inp?(i.value.trim()||null):true);
+ o.querySelector("#dlgn").onclick=()=>end(inp?null:false)})}
+const LIB=[
+["Barbell","Barbell Back Squat|Barbell Front Squat|Zercher Squat|Conventional Deadlift|Sumo Deadlift|Romanian Deadlift|Trap Bar Deadlift|Barbell Bench Press|Incline Barbell Bench Press|Close-Grip Bench Press|Overhead Press|Push Press|Barbell Row|Pendlay Row|Barbell Hip Thrust|Barbell Lunge|Good Morning|Barbell Curl|EZ Bar Curl|Skull Crusher|Barbell Shrug|Power Clean|Hang Clean|Snatch|Landmine Press|Landmine Row"],
+["Dumbbell","Dumbbell Bench Press|Incline Dumbbell Press|Dumbbell Shoulder Press|Arnold Press|Dumbbell Row|Single-Arm Dumbbell Row|Dumbbell Romanian Deadlift|Goblet Squat|Dumbbell Lunge|Dumbbell Walking Lunge|Bulgarian Split Squat|Dumbbell Step-Up|Dumbbell Lateral Raise|Dumbbell Front Raise|Rear Delt Fly|Dumbbell Chest Fly|Dumbbell Bicep Curl|Hammer Curl|Concentration Curl|Dumbbell Tricep Extension|Tricep Kickback|Dumbbell Hip Thrust|Dumbbell Pullover|Dumbbell Shrug|Dumbbell Thruster|Dumbbell Snatch|Renegade Row|Dumbbell Sumo Squat"],
+["Bodyweight","Push-Up|Incline Push-Up|Decline Push-Up|Diamond Push-Up|Pull-Up|Chin-Up|Inverted Row|Bodyweight Squat|Jump Squat|Reverse Lunge|Walking Lunge|Pistol Squat|Glute Bridge|Single-Leg Glute Bridge|Dips|Bench Dips|Plank|Side Plank|Mountain Climber|Burpee|Crunch|Bicycle Crunch|Leg Raise|Hanging Leg Raise|V-Up|Russian Twist|Bird Dog|Dead Bug|Superman|Hollow Hold|Calf Raise|Wall Sit|Handstand Push-Up|Muscle-Up|L-Sit|Jumping Jack|High Knees|Box Jump|Broad Jump|Skater Jump"],
+["Functional","Kettlebell Swing|Turkish Get-Up|Kettlebell Goblet Squat|Kettlebell Clean and Press|Kettlebell Snatch|Farmer's Carry|Suitcase Carry|Sled Push|Sled Pull|Battle Rope Waves|Medicine Ball Slam|Wall Ball|Rotational Med Ball Throw|Bear Crawl|Sandbag Carry|TRX Row|TRX Push-Up|Cable Woodchop|Pallof Press|Lateral Lunge|Cossack Squat|Box Step-Up|Single-Leg Romanian Deadlift|Ab Wheel Rollout|Rope Climb|Tire Flip|Hip Airplane|Copenhagen Plank"],
+["Machine & Cable","Lat Pulldown|Seated Cable Row|Leg Press|Leg Extension|Leg Curl|Chest Press Machine|Pec Deck|Cable Fly|Cable Tricep Pushdown|Face Pull|Cable Curl|Hack Squat|Smith Machine Squat|Seated Calf Raise|Hip Abduction Machine|Hip Adduction Machine|Back Extension|Assisted Pull-Up"]
+].map(([c,n])=>[c,n.split("|")]);
+function recent(q){const c0=cur(),out=[],seen={};q=(q||"").toLowerCase();
+ [c0,...S.clients.filter(x=>x!==c0)].forEach(cl=>{(cl.hist||[]).slice().reverse().forEach(h=>{const cs=h.cols||cl.cols,ex=cs.find(k=>/latihan|exercise|gerak|nama/i.test(k.label));if(!ex)return;h.rows.forEach(r=>{const nm=(r.c[ex.id]||"").trim();if(!nm)return;const key=nm.toLowerCase();if(seen[key]||(q&&!key.includes(q)))return;seen[key]=1;const cells={};cs.forEach(k=>{if(k.id!==ex.id&&r.c[k.id])cells[k.label]=r.c[k.id]});out.push({nm,cells,d:h.d,who:cl===c0?"":cl.name})})})});
+ LIB.forEach(([cat,names])=>names.forEach(nm=>{const key=nm.toLowerCase();if(seen[key]||(q&&!key.includes(q)))return;seen[key]=1;out.push({nm,cells:{},d:"",who:"",cat})}));
+ const H=out.filter(x=>!x.cat),L=out.filter(x=>x.cat);
+ return q?[...H.slice(0,8),...L].slice(0,25):[...H.slice(0,6),...L].slice(0,16)}
+var sgInp=null;
+function posSg(){const o=document.getElementById("sg");if(!o||!sgInp||!document.body.contains(sgInp)){closeSg();return}
+ const r=sgInp.getBoundingClientRect(),vh=(window.visualViewport?visualViewport.height:innerHeight),below=vh-r.bottom-10,above=r.top-10,up=below<200&&above>below,mh=Math.max(140,Math.min(340,up?above:below)),w=Math.max(r.width,270);
+ o.style.left=Math.max(8,Math.min(r.left,innerWidth-w-8))+"px";o.style.width=w+"px";o.style.maxHeight=mh+"px";
+ if(up){o.style.top="auto";o.style.bottom=(innerHeight-r.top+2)+"px"}else{o.style.bottom="auto";o.style.top=(r.bottom+2)+"px"}}
+function closeSg(){const o=document.getElementById("sg");if(o)o.remove()}
+function showSg(inp){closeSg();const list=recent(inp.value);if(!list.length)return;
+ const o=document.createElement("div");o.id="sg";const r=inp.getBoundingClientRect();
+ o.style.cssText="position:fixed;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;background:#0f1a33;border:1px solid var(--gold);border-radius:12px;z-index:50;font-family:'Jost',system-ui,sans-serif;font-size:14px;box-shadow:0 12px 40px rgba(0,0,0,.55)";
+ o.innerHTML=`<div class="hint" style="padding:6px 10px">Recent Exercise</div>`+list.map((x,i)=>`<div data-sg="${i}" style="padding:11px 12px;cursor:pointer;border-top:1px solid var(--line)"><b>${esc(x.nm)}</b>${x.who?` <span class="hint">(${esc(x.who)})</span>`:""}<div class="hint">${x.cat?esc(x.cat):esc(Object.entries(x.cells).map(([a,b])=>a+": "+b).join(" · "))+" · "+esc(x.d)}</div></div>`).join("");
+ o.onmousedown=e=>{const t=e.target.closest("[data-sg]");if(!t)return;e.preventDefault();const x=list[+t.dataset.sg],c=cur(),row=c.rows.find(z=>z.id===inp.dataset.r),ex=c.cols.find(k=>/latihan|exercise|gerak|nama/i.test(k.label));if(row&&ex){row.c[ex.id]=x.nm;row.pv=x.cells;save();closeSg();render()}};
+ document.body.appendChild(o);sgInp=inp;posSg()}
+document.addEventListener("focusin",e=>{if(e.target.dataset&&e.target.dataset.ex)showSg(e.target)});
+document.addEventListener("input",e=>{if(e.target.dataset&&e.target.dataset.ex)showSg(e.target)});
+document.addEventListener("mousedown",e=>{if(!e.target.closest("#sg")&&!(e.target.dataset&&e.target.dataset.ex))closeSg()});
+window.addEventListener("scroll",e=>{const o=document.getElementById("sg");if(!o)return;if(e.target&&e.target.nodeType===1&&o.contains(e.target))return;posSg()},true);
+if(window.visualViewport)visualViewport.addEventListener("resize",posSg);
+document.addEventListener("click",async e=>{
+ const t=e.target,c=cur();
+ if(t.id==="an"){analysis=null;aiText="";analyze();showAn()}
+ else if(t.id==="ns"){const has=c.rows.some(r=>Object.values(r.c).some(v=>v));if(!has){await dlg("The table is empty. Fill it in before starting a new session.");return}if(await dlg("Save this session to history and start a new one? Your previous values will show as hints when you pick an exercise from Recent Exercise.")){c.hist=c.hist||[];c.hist.push({d:fmtD(c.date||today()),iso:c.date||today(),rows:JSON.parse(JSON.stringify(c.rows)),cols:JSON.parse(JSON.stringify(c.cols)),n:c.notes});c.rows=[{id:uid(),c:{}}];c.notes="";c.date=today();if((c.left||0)>0)c.left--;analysis=null;save();render()}}
+ else if(t.id==="hs"){showH=!showH;render()}
+ else if(t.dataset.ha!==undefined){const x=(c.hist||[])[+t.dataset.ha];if(!x)return;const a=analyze({id:0,cols:x.cols||c.cols,rows:x.rows});const k=t.dataset.ha;document.getElementById("ha-"+k).innerHTML=`<div style="margin-top:10px">${statsHtml(a,k)}${sample&&a.n?`<br><button data-hai="${k}" class="gold" style="margin-top:10px">Deep analysis with Claude</button><div id="hai-${k}" style="margin-top:10px"></div>`:""}</div>`}
+ else if(t.dataset.hai!==undefined){const x=(c.hist||[])[+t.dataset.hai];if(!x)return;const o=document.getElementById("hai-"+t.dataset.hai);o.textContent="Analyzing…";const cs=x.cols||c.cols;const tbl=x.rows.map(r=>cs.map(z=>z.label+": "+(r.c[z.id]||"-")).join(" | ")).join("\n");try{const r=await sample("Kamu asisten analis personal trainer. Analisis sesi latihan client berikut dalam Bahasa Indonesia: evaluasi beban/volume/RPE, risiko, dan rekomendasi progresi untuk sesi berikutnya. Ringkas, praktis, tanpa diagnosis medis.\n\nTanggal sesi: "+x.d+"\nData:\n"+tbl+"\n\nCatatan trainer: "+(x.n||"-"),{onText:z=>{o.textContent=z.text}});o.textContent=r.text}catch(err){o.textContent="Claude analysis is currently unavailable."}}
+ else if(t.dataset.tr!==undefined){const o=document.getElementById("trend");const L=inRangeH(c);if(!L.length){o.textContent="No sessions in this date range.";return}
+ const sts=L.map(x=>analyze({id:0,cols:x.cols||c.cols,rows:x.rows})),vols=sts.map(a=>a.vol),rp=sts.map(a=>a.avg).filter(a=>a!=null),tv=vols.reduce((a,b)=>a+b,0);
+ let sm="Periode "+esc(L[0].d)+" – "+esc(L[L.length-1].d)+": "+L.length+" sesi, total volume "+Math.round(tv).toLocaleString("en-US")+" kg"+(rp.length?", rata-rata RPE "+(rp.reduce((a,b)=>a+b,0)/rp.length).toFixed(1):"")+".";
+ if(L.length>1&&vols[0]>0){const d=(vols[vols.length-1]-vols[0])/vols[0]*100;sm+=" Volume sesi terakhir dibanding sesi pertama: "+(d>=0?"▲ +":"▼ ")+d.toFixed(0)+"%."}
+ o.innerHTML=`<div style="margin-top:8px"><b style="color:var(--gold)">Analisis Tren</b><br>${sm}</div>${sample?`<div id="trai" style="margin-top:10px">Analyzing…</div>`:""}`;
+ if(sample){const ai=document.getElementById("trai");const txt=L.map((x,i)=>{const cs=x.cols||c.cols;return "Sesi "+(i+1)+" ("+x.d+")\n"+x.rows.map(r=>cs.map(z=>z.label+": "+(r.c[z.id]||"-")).join(" | ")).join("\n")+(x.n?"\nCatatan: "+x.n:"")}).join("\n\n");try{const r=await sample("Kamu asisten analis personal trainer. Analisis tren latihan client "+c.name+" untuk periode "+L[0].d+" sampai "+L[L.length-1].d+" dari sesi-sesi berikut dalam Bahasa Indonesia: progres beban/volume, tren RPE, konsistensi, risiko plateau atau kelelahan berlebih, dan rekomendasi program berikutnya. Ringkas dan praktis, tanpa diagnosis medis.\n\n"+txt,{onText:z=>{ai.textContent=z.text}});ai.textContent=r.text}catch(err){ai.textContent="Claude analysis is currently unavailable."}}}
+ else if(t.dataset.dl!==undefined){const R=getRep(t.dataset.dl);if(!R||!dl)return;try{await dl.save({filename:R.file,data:docHtml(R)})}catch(err){}}
+ else if(t.dataset.cp!==undefined){const R=getRep(t.dataset.cp);if(!R)return;try{await navigator.clipboard.writeText(docText(R));t.textContent="Copied ✓"}catch(err){t.textContent="Copy blocked here — use Download"}}
+ else if(t.dataset.pr){if(t.dataset.pr==="all"){trFrom="";trTo=""}else{const f=new Date();f.setDate(f.getDate()-(+t.dataset.pr));trFrom=isoD(f);trTo=today()}drawH()}
+ else if(t.id==="v1"){view="cl";render()}
+ else if(t.id==="v2"){view="ov";render()}
+ else if(t.id==="mp"){ovM=shiftM(ovM,-1);drawOv()}
+ else if(t.id==="mn"){ovM=shiftM(ovM,1);drawOv()}
+ else if(t.id==="mt"){ovM=today().slice(0,7);drawOv()}
+ else if(t.dataset.gm){ovM=t.dataset.gm;drawOv()}
+ else if(t.dataset.go){S.sel=t.dataset.go;view="cl";save();render()}
+ else if(t.id==="ar"){c.rows.push({id:uid(),c:{}});save();render()}
+ else if(t.id==="ak"){const n=await dlg("New column name:",true,"");if(n){c.cols.push({id:uid(),label:n});save();render()}}
+ else if(t.dataset.dk){if(await dlg("Delete this column and its contents?")){c.cols=c.cols.filter(k=>k.id!==t.dataset.dk);save();render()}}
+ else if(t.dataset.dr){c.rows=c.rows.filter(r=>r.id!==t.dataset.dr);if(!c.rows.length)c.rows.push({id:uid(),c:{}});save();render()}
+ else if(t.id==="nc"){const n=await dlg("Client name:",true,"");if(n){const x=newClient(n);S.clients.push(x);S.sel=x.id;save();render()}}
+ else if(t.id==="rc"){const n=await dlg("New name:",true,c.name);if(n){c.name=n;save();render()}}
+ else if(t.id==="dc"){if(S.clients.length>1&&await dlg("Delete client "+c.name+"?")){S.clients=S.clients.filter(x=>x!==c);S.sel=S.clients[0].id;save();render()}}
+ else if(t.id==="ai"){
+  const o=document.getElementById("aiout");o.textContent="Analyzing…";
+  const tbl=c.rows.map(r=>c.cols.map(k=>k.label+": "+(r.c[k.id]||"-")).join(" | ")).join("\n");
+  try{const r=await sample(`Kamu asisten analis personal trainer. Analisis sesi latihan client berikut dalam Bahasa Indonesia: evaluasi beban/volume/RPE, risiko, dan rekomendasi progresi untuk sesi berikutnya. Ringkas, praktis, tanpa diagnosis medis.\n\nData:\n${tbl}\n\nTanggal sesi: ${fmtD(c.date||today())}\nCatatan trainer: ${c.notes||"-"}`,{onText:x=>{aiText=x.text;o.textContent=aiText}});aiText=r.text;o.textContent=aiText}
+  catch(err){o.textContent="Claude analysis is currently unavailable."}}
+});
+document.addEventListener("input",e=>{
+ const t=e.target,c=cur();
+ if(t.id==="mi"){if(t.value){ovM=t.value;drawOv()}}
+ else if(t.id==="tf"){trFrom=t.value;updTrc()}
+ else if(t.id==="tt"){trTo=t.value;updTrc()}
+ else if(t.dataset.k){c.cols.find(k=>k.id===t.dataset.k).label=t.value;save()}
+ else if(t.dataset.r){c.rows.find(r=>r.id===t.dataset.r).c[t.dataset.c]=t.value;save()}
+ else if(t.id==="dt"){c.date=t.value;const l=document.getElementById("dtl");if(l)l.textContent=fmtD(t.value);save()}
+ else if(t.id==="sl"){c.left=Math.max(0,parseInt(t.value)||0);save()}
+ else if(t.id==="cn"){c.name=t.value;const o=document.querySelector("#cl option:checked");if(o)o.textContent=t.value||"(no name)";save()}
+ else if(t.id==="nt"){c.notes=t.value;save()}
+});
+var showH=false;
+function explainParts(a,pv){const P=[],V=Math.round(a.vol).toLocaleString("en-US"),nm=[...new Set((a.items||[]).map(x=>x.nm))];
+ P.push({h:"Latihan",t:`Sesi ini terdiri dari ${a.n} latihan (${nm.join(", ")}). Jumlah latihan menunjukkan cakupan dan variasi program dalam satu sesi.`});
+ let tv=`Total volume adalah jumlah beban yang diangkat selama sesi, dihitung dari set × beban × repetisi pada setiap latihan lalu dijumlahkan. Total volume sesi ini ${V} kg.`;
+ const big=(a.items||[]).filter(x=>x.vol>0).sort((x,y)=>y.vol-x.vol)[0];
+ if(big&&a.vol>0)tv+=` Kontributor terbesar adalah ${big.nm} (${Math.round(big.vol).toLocaleString("en-US")} kg, ${Math.round(big.vol/a.vol*100)}% dari total).`;
+ if(pv&&pv.vol>0&&a.vol>0){const d=(a.vol-pv.vol)/pv.vol*100;tv+=` Dibandingkan sesi sebelumnya, volume ${d>=0?"naik":"turun"} ${Math.abs(d).toFixed(0)}%.`}
+ P.push({h:"Total volume",t:tv});
+ P.push({h:"Total repetisi",t:`Total repetisi adalah seluruh pengulangan gerakan sepanjang sesi (set × repetisi), yaitu ${a.reps||0}. Angka ini menggambarkan jumlah kerja yang dilakukan, terlepas dari besar beban.`});
+ P.push({h:"Rata-rata RPE",t:a.avg==null?"RPE belum diisi, sehingga intensitas sesi belum bisa dinilai. RPE (Rate of Perceived Exertion) adalah skala 1–10 yang menunjukkan seberapa berat latihan terasa.":`RPE (Rate of Perceived Exertion) adalah skala 1–10 yang menunjukkan seberapa berat latihan terasa; 10 berarti hampir tidak ada repetisi tersisa. Rata-rata RPE sesi ini ${a.avg.toFixed(1)}. ${a.lvl}`+(pv&&pv.avg!=null?` Pada sesi sebelumnya rata-ratanya ${pv.avg.toFixed(1)}.`:"")});
+ P.push({h:"Beban terberat",t:a.top?`Beban terberat adalah beban tertinggi yang dipakai pada satu latihan, yaitu ${a.top.b} kg${a.top.nm?" pada "+a.top.nm:""}. Angka ini berguna untuk memantau perkembangan kekuatan dari sesi ke sesi.`:"Belum ada beban yang tercatat pada sesi ini."});
+ if(a.fl.length)P.push({h:"Rekomendasi per latihan",t:a.fl.join("\n")});
+ return P}
+function prevOf(key){const c=cur(),H=c.hist||[],i=key==="cur"?H.length:+key;if(!(i>0)||!H[i-1])return null;const y=H[i-1];return analyze({id:0,cols:y.cols||c.cols,rows:y.rows})}
+function repBtns(key){return `<div class="tb" style="margin-top:14px"><button data-cp="${key}">Copy report text</button>${dl?`<button data-dl="${key}" class="gold">Download report (.doc)</button>`:""}</div>`}
+function statsHtml(a,key){if(!a.n)return"Sesi ini tidak punya data latihan.";return `<div class="st"><div><b>${a.n}</b><span>Latihan</span></div><div><b>${Math.round(a.vol).toLocaleString("en-US")} kg</b><span>Total volume</span></div><div><b>${a.reps||"-"}</b><span>Total repetisi</span></div><div><b>${a.avg==null?"-":a.avg.toFixed(1)}</b><span>Rata-rata RPE</span></div><div><b>${a.top?esc(a.top.b)+" kg":"-"}</b><span>Beban terberat${a.top&&a.top.nm?" ("+esc(a.top.nm)+")":""}</span></div></div>`+explainParts(a,prevOf(key)).map(p=>`<div style="margin-top:12px"><b style="color:var(--gold)">${esc(p.h)}</b><br>${esc(p.t).replace(/\n/g,"<br>")}</div>`).join("")+repBtns(key)}
+function getRep(key){const c=cur(),H=c.hist||[];let src;if(key==="cur")src={cols:c.cols,rows:c.rows,date:fmtD(c.date||today()),iso:c.date||today(),notes:c.notes};else{const x=H[+key];if(!x)return null;src={cols:x.cols||c.cols,rows:x.rows,date:x.d,iso:isoOf(x)||"",notes:x.n}}
+ const a=analyze({id:0,cols:src.cols,rows:src.rows});if(!a.n)return null;
+ return{client:c.name,date:src.date,file:"Analisis-Latihan_"+c.name.replace(/[^\w-]+/g,"_")+"_"+(src.iso||"sesi")+".doc",head:src.cols.map(k=>k.label),body:src.rows.filter(r=>src.cols.some(k=>r.c[k.id])).map(r=>src.cols.map(k=>r.c[k.id]||"")),sum:[["Latihan",a.n],["Total volume",Math.round(a.vol).toLocaleString("en-US")+" kg"],["Total repetisi",a.reps||0],["Rata-rata RPE",a.avg==null?"-":a.avg.toFixed(1)],["Beban terberat",a.top?a.top.b+" kg"+(a.top.nm?" ("+a.top.nm+")":""):"-"]],parts:explainParts(a,prevOf(key)),notes:src.notes||""}}
+function docText(R){return["ANALISIS SESI LATIHAN","Client: "+R.client,"Tanggal: "+R.date,"","DATA SESI",R.head.join(" | "),...R.body.map(r=>r.join(" | ")),"","RINGKASAN",...R.sum.map(r=>r[0]+": "+r[1]),"","PENJELASAN",...R.parts.map(p=>p.h+"\n"+p.t+"\n"),R.notes?"Catatan trainer:\n"+R.notes:""].join("\n")}
+function docHtml(R){const e=esc;return `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Analisis Sesi Latihan</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#222}h1{font-size:20pt;color:#1b2a4a}h2{font-size:14pt;color:#1b2a4a;margin:16pt 0 4pt}h3{font-size:12pt;color:#1b2a4a;margin:12pt 0 2pt}table{border-collapse:collapse;width:100%}th,td{border:1px solid #999;padding:4px 8px;font-size:10pt}th{background:#1b2a4a;color:#fff;text-align:left}</style></head><body><h1>Analisis Sesi Latihan</h1><p><b>Client:</b> ${e(R.client)}<br><b>Tanggal:</b> ${e(R.date)}</p><h2>Data sesi</h2><table><tr>${R.head.map(h=>`<th>${e(h)}</th>`).join("")}</tr>${R.body.map(r=>`<tr>${r.map(v=>`<td>${e(v)}</td>`).join("")}</tr>`).join("")}</table><h2>Ringkasan</h2><table>${R.sum.map(r=>`<tr><th style="width:35%">${e(r[0])}</th><td>${e(r[1])}</td></tr>`).join("")}</table><h2>Penjelasan</h2>${R.parts.map(p=>`<h3>${e(p.h)}</h3><p>${e(p.t).replace(/\n/g,"<br>")}</p>`).join("")}${R.notes?`<h2>Catatan trainer</h2><p>${e(R.notes).replace(/\n/g,"<br>")}</p>`:""}</body></html>`}
+var dl=null,view="cl",trFrom="",trTo="",ovM=today().slice(0,7);
+const MO={jan:1,feb:2,mar:3,apr:4,mei:5,may:5,jun:6,jul:7,agu:8,aug:8,sep:9,okt:10,oct:10,nov:11,des:12,dec:12};
+function isoOf(x){if(x.iso)return x.iso;const m=String(x.d||"").match(/(\d{1,2})\s+([A-Za-z]+)\.?\s+(\d{4})/);if(!m)return null;const mo=MO[m[2].slice(0,3).toLowerCase()];if(!mo)return null;return x.iso=m[3]+"-"+String(mo).padStart(2,"0")+"-"+m[1].padStart(2,"0")}
+const LM={"Latihan":"Exercise","Beban (kg)":"Weight (kg)","Repetisi":"Reps","Catatan":"Notes"};
+function fixCols(cs){(cs||[]).forEach(k=>{if(LM[k.label])k.label=LM[k.label]})}
+function fixAll(){S.clients.forEach(c=>{fixCols(c.cols);(c.hist||[]).forEach(x=>{fixCols(x.cols);const i=isoOf(x);if(i)x.d=fmtD(i)});(c.rows||[]).forEach(r=>{if(r.pv){const p={};Object.entries(r.pv).forEach(([a,b])=>p[LM[a]||a]=b);r.pv=p}})})}
+const isoD=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+function inRangeH(c){return(c.hist||[]).filter(x=>{const i=isoOf(x);return i?((!trFrom||i>=trFrom)&&(!trTo||i<=trTo)):(!trFrom&&!trTo)}).sort((a,b)=>(isoOf(a)||"").localeCompare(isoOf(b)||""))}
+function updTrc(){const el=document.getElementById("trc");if(el)el.textContent=inRangeH(cur()).length+" of "+(cur().hist||[]).length+" sessions in range"}
+function monthLabel(m){const[y,mo]=m.split("-").map(Number);return new Date(y,mo-1,1).toLocaleDateString("en-GB",{month:"long",year:"numeric"})}
+function shiftM(m,d){const[y,mo]=m.split("-").map(Number);const t=new Date(y,mo-1+d,1);return t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")}
+function drawH(){const c=cur(),el=document.getElementById("hist");if(!el)return;const H=c.hist||[];
+if(!H.length){el.innerHTML=`<div class="card an"><h3>Session History</h3>No history yet. Click ▶ New session after filling in a session.</div>`;return}
+const st=H.map(x=>analyze({id:0,cols:x.cols||c.cols,rows:x.rows}));
+let t=`<div class="tw"><table style="min-width:440px"><tr><th>Session</th><th>Date</th><th>Volume (kg)</th><th>Avg RPE</th><th>Volume trend</th></tr>`;
+for(let i=H.length-1;i>=0;i--){const a=st[i],p=i>0?st[i-1]:null;let tr="-";if(p&&p.vol>0&&a.vol>0){const d=(a.vol-p.vol)/p.vol*100;tr=(d>=0?"▲ +":"▼ ")+d.toFixed(0)+"%"}
+ t+=`<tr><td>${i+1}</td><td>${esc(H[i].d)}</td><td>${Math.round(a.vol).toLocaleString("en-US")}</td><td>${a.avg==null?"-":a.avg.toFixed(1)}</td><td>${tr}</td></tr>`}
+t+=`</table></div>`;
+const tc=`<h3 style="margin-top:18px">Trend Analysis</h3><div class="tb"><div class="f" style="min-width:160px"><label>From</label><input type="date" id="tf" class="fi" value="${trFrom}"></div><div class="f" style="min-width:160px"><label>To</label><input type="date" id="tt" class="fi" value="${trTo}"></div></div><div class="tb" style="margin:10px 0"><button data-pr="30">Last 30 days</button><button data-pr="90">Last 90 days</button><button data-pr="all">All sessions</button></div><div class="hint" id="trc"></div><div class="tb" style="margin:10px 0"><button data-tr="1" class="gold">✦ Analyze trend</button></div><div id="trend"></div>`;
+let b="";for(let i=H.length-1;i>=0;i--){const x=H[i],cs=x.cols||c.cols;
+ b+=`<details style="border-top:1px solid var(--line);padding:10px 0"><summary style="cursor:pointer;color:var(--gold)">Session ${i+1} · ${esc(x.d)}</summary><div style="margin:8px 0">${x.rows.map(r=>cs.map(k=>r.c[k.id]).filter(Boolean).map(esc).join(" · ")).filter(Boolean).map(z=>`<div>${z}</div>`).join("")}${x.n?`<div style="margin-top:6px;color:var(--mut)">Notes: ${esc(x.n)}</div>`:""}</div><button data-ha="${i}">✦ Analyze this session</button><div id="ha-${i}"></div></details>`}
+el.innerHTML=`<div class="card an"><h3>Session History</h3>${t}${tc}${b}</div>`;updTrc()}
+function drawOv(){const app=document.getElementById("app");
+ const per=S.clients.map(c=>{const ss=(c.hist||[]).map(isoOf).filter(i=>i&&i.slice(0,7)===ovM).sort();return{c,n:ss.length,days:ss.map(i=>+i.slice(8)).join(", ")}}).sort((a,b)=>b.n-a.n||a.c.name.localeCompare(b.c.name));
+ const tot=per.reduce((a,x)=>a+x.n,0),act=per.filter(x=>x.n>0).length,mx=Math.max(1,...per.map(x=>x.n));
+ const mt={};S.clients.forEach(c=>(c.hist||[]).forEach(x=>{const i=isoOf(x);if(!i)return;const m=i.slice(0,7);(mt[m]=mt[m]||{n:0,who:{}});mt[m].n++;mt[m].who[c.id]=1}));
+ let h=`<div class="card"><div class="tb"><button id="mp">‹</button><input id="mi" type="month" class="fi" style="width:190px" value="${ovM}"><button id="mn">›</button><button id="mt">This month</button></div></div>`;
+ h+=`<div class="card"><h3 class="sec">${esc(monthLabel(ovM))}</h3><div class="grid"><div class="f"><label>Total members</label><div class="fi big ro">${S.clients.length}</div></div><div class="f"><label>Active this month</label><div class="fi big ro">${act}</div></div><div class="f"><label>Total sessions = teaching hours</label><div class="fi big ro">${tot}</div><div class="hint">1 session = 1 hour</div></div><div class="f"><label>Avg sessions / active member</label><div class="fi big ro">${act?(tot/act).toFixed(1):"-"}</div></div></div></div>`;
+ h+=`<div class="card"><h3 class="sec">Sessions per member</h3><div class="tw"><table style="min-width:520px"><tr><th>Member</th><th>Sessions</th><th></th><th>Session days</th><th>Package left</th></tr>${per.map(x=>`<tr><td><button class="x" data-go="${x.c.id}" style="color:var(--tx);font-size:14px;text-align:left">${esc(x.c.name)}</button></td><td style="text-align:center"><b style="color:var(--gold)">${x.n}</b></td><td style="width:28%"><div style="height:8px;border-radius:6px;background:linear-gradient(90deg,var(--gold),var(--gold2));width:${x.n/mx*100}%"></div></td><td>${x.days||"-"}</td><td style="text-align:center">${x.c.left||0}</td></tr>`).join("")}</table></div><div class="hint" style="margin-top:8px">Counts sessions saved with ▶ New session, by session date. Tap a member to open their program.</div></div>`;
+ const ms=Object.keys(mt).sort().reverse();
+ h+=`<div class="card"><h3 class="sec">Monthly totals</h3>${ms.length?`<div class="tw"><table style="min-width:420px"><tr><th>Month</th><th>Total sessions (hours)</th><th>Active members</th></tr>${ms.map(m=>`<tr><td><button class="x" data-gm="${m}" style="color:var(--tx);font-size:14px">${esc(monthLabel(m))}</button></td><td>${mt[m].n}</td><td>${Object.keys(mt[m].who).length} / ${S.clients.length}</td></tr>`).join("")}</table></div>`:`<div class="hint">No sessions recorded yet.</div>`}</div>`;
+ app.innerHTML=h}
+document.getElementById("cl").onchange=e=>{S.sel=e.target.value;analysis=null;save();render()};
+fixAll();render();sync("Saved on this device");
+(async()=>{
+ try{const cl=window.claude;if(!cl)return;
+  sample=await cl.use("sample");try{dl=await cl.use("downloads")}catch(e){}if(analysis)showAn();
+  db=await cl.use("db");
+  if(db){const s=await db.doc("app/state").get();
+   if(s.exists){const j=JSON.parse(s.data().json);if(j&&j.clients&&j.clients.length){S=j;fixAll();render()}}
+   sync("Saved ✓ (synced across your devices)")}
+ }catch(e){}
+})();
+</script></body></html>
